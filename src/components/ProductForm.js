@@ -1,9 +1,11 @@
 import React from "react";
 import { useState } from "react";
 import TypeSwitcher from "./TypeSwitcher";
+import "./aBitOfStylingSoItAintUgly.css";
 
 const ProductForm = () => {
   const [inputs, setInputs] = useState({});
+
   const handleChange = (event) => {
     const name = event.target.name;
     const value = event.target.value;
@@ -12,15 +14,15 @@ const ProductForm = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    //temporary
+
     console.log(inputs);
   };
 
   return (
     <div>
-      <form onSubmit={handleSubmit}>
-        <div>
-          <label for="sku">SKU: </label>
+      <form onSubmit={handleSubmit} className="add-product">
+        <label>
+          SKU:
           <input
             id="sku"
             type="text"
@@ -29,9 +31,10 @@ const ProductForm = () => {
             onChange={handleChange}
             name="sku"
           />
-        </div>
-        <div>
-          <label for="name">Name: </label>
+        </label>
+
+        <label>
+          Name:
           <input
             id="name"
             type="text"
@@ -40,9 +43,10 @@ const ProductForm = () => {
             onChange={handleChange}
             name="product name"
           />
-        </div>
-        <div>
-          <label for="price">Price ($): </label>
+        </label>
+
+        <label>
+          Price ($):
           <input
             id="price"
             type="number"
@@ -51,10 +55,11 @@ const ProductForm = () => {
             onChange={handleChange}
             name="product price"
           />
-        </div>
+        </label>
+
         <TypeSwitcher />
 
-        <button type="submit">Save</button>
+        <button className="btn">Save</button>
       </form>
     </div>
   );

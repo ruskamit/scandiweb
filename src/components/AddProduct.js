@@ -5,11 +5,15 @@ import ProductForm from "./ProductForm";
 const AddProduct = () => {
   return (
     <div>
-      <h1>Add Product</h1>
+      <nav className="container">
+        <h1>Add Product</h1>
+        <button className="btn">
+          <Link to="/" className="link">
+            Cancel
+          </Link>
+        </button>
+      </nav>
       <ProductForm />
-      <button>
-        <Link to="/">Cancel</Link>
-      </button>
     </div>
   );
 };

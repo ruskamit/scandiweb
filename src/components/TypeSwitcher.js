@@ -10,19 +10,20 @@ const TypeSwitcher = () => {
   };
 
   return (
-    <div>
-      <div>
-        <label for="productType">Type Switcher: </label>
+    <div className="">
+      <label>
+        Type Switcher:
         <select id="productType" required onChange={(e) => handleShowHide(e)}>
-          <option value="">Please choose one option</option>
+          <option value="">--Please choose one option--</option>
           <option value="dvd">DVD</option>
           <option value="book">Book</option>
           <option value="furniture">Furniture</option>
         </select>
-      </div>
+      </label>
+
       {showHide === "dvd" && (
-        <div>
-          <label for="size">Size (MB)</label>
+        <label>
+          Size (MB)
           <input
             id="size"
             name="size"
@@ -30,12 +31,12 @@ const TypeSwitcher = () => {
             type="number"
             placeholder="Size in MB"
           />
-        </div>
+        </label>
       )}
 
       {showHide === "book" && (
-        <div>
-          <label for="weight">Weight (KG)</label>
+        <label>
+          Weight (KG)
           <input
             id="weight"
             name="weight"
@@ -43,35 +44,41 @@ const TypeSwitcher = () => {
             required
             placeholder="Weight in KG"
           />
-        </div>
+        </label>
       )}
 
       {showHide === "furniture" && (
         <div>
-          <label for="height">Height</label>
-          <input
-            id="height"
-            name="height"
-            type="number"
-            required
-            placeholder="Height in CM"
-          />
-          <label for="width">Width</label>
-          <input
-            id="width"
-            name="width"
-            type="number"
-            required
-            placeholder="Width in CM"
-          />
-          <label for="length">Length</label>
-          <input
-            id="length"
-            name="length"
-            type="number"
-            required
-            placeholder="Length in CM"
-          />
+          <label>
+            Height
+            <input
+              id="height"
+              name="height"
+              type="number"
+              required
+              placeholder="Height in CM"
+            />
+          </label>
+          <label>
+            Width
+            <input
+              id="width"
+              name="width"
+              type="number"
+              required
+              placeholder="Width in CM"
+            />
+          </label>
+          <label>
+            Length
+            <input
+              id="length"
+              name="length"
+              type="number"
+              required
+              placeholder="Length in CM"
+            />
+          </label>
         </div>
       )}
     </div>
